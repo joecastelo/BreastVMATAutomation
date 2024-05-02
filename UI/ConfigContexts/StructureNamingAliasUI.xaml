@@ -1,0 +1,116 @@
+﻿<UserControl x:Class="BreastVMATAutomation.UI.ConfigContexts.StructureNamingAliasUI"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BreastVMATAutomation.UI.ConfigContexts"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label Name="ThemeLabel" Grid.Row="0" FontWeight="Bold" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <DataGrid Style="{x:Null}" Grid.Row="1" AutoGenerateColumns="False" Margin="5" Name="StructureNamingAliasDBDG" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="IdOnApplication" Binding="{Binding IdOnApplication}"/>
+                <DataGridTextColumn Header="Alias" Binding="{Binding Alias}"/>
+
+                <DataGridTemplateColumn Header="Update">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="Edit" Content="Edit" Click="EditStructureNamingAlias_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Delete">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="Delete" Content="Delete" Click="DeleteStructureNamingAlias_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+        <Grid Style="{x:Null}" Grid.Row="2">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0" BorderBrush="Black" BorderThickness="1" Margin="5">
+                <StackPanel Margin="5">
+                    <Label Content="Add Alias" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                    <Grid Margin="5" x:Name="AddStructureNamingAliasModel">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+
+                        </Grid.RowDefinitions>
+
+
+                        <Label Grid.Row="0" Grid.Column="0" Content="IdOnApplication"/>
+                        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding IdOnApplication}"/>
+
+                        <Label Grid.Row="1" Grid.Column="0" Content="Alias"/>
+                        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Alias}"/>
+
+                        <Button x:Name="AddStructureNamingAlias" Grid.Row="2" Grid.ColumnSpan="2" Content="Add" Margin="5" Click="AddStructureNamingAlias_Click"/>
+
+                    </Grid>
+
+                </StackPanel>
+            </Border>
+
+
+            <Border Grid.Column="1" BorderBrush="Black" BorderThickness="1" Margin="5">
+                <StackPanel Margin="5">
+                    <Label Content="Update Alias" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                    <Grid Margin="5" x:Name="UpdateStructureNamingAliasModel">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0" Grid.Column="0" Content="IdOnApplication"/>
+                        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding IdOnApplication}"/>
+
+                        <Label Grid.Row="1" Grid.Column="0" Content="Alias"/>
+                        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Alias}"/>
+
+                        <Button x:Name="UpdateStructureNamingAlias" Grid.Row="2" Grid.ColumnSpan="2" Content="Update" Margin="5" Click="UpdateStructureNamingAlias_Click"/>
+
+                    </Grid>
+
+                </StackPanel>
+            </Border>
+
+        </Grid>
+
+        <!-- Update Grid -->
+        <!-- End Update Grid -->
+    </Grid>
+</UserControl>

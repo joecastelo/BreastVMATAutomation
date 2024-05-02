@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="BreastVMATAutomation.UI.MainWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BreastVMATAutomation.UI"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="500" Background="LightGray">
+    <Grid>
+        <StackPanel Style="{x:Null}">
+            <StackPanel.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Style="{x:Null}" Header="Script Configuration" Name="Config" Click="Config_Click" ></MenuItem>
+                </ContextMenu>
+            </StackPanel.ContextMenu>
+            <TextBlock FontSize="30" HorizontalAlignment="Center" Margin="10">Breast Geometry Tool</TextBlock>
+            <DockPanel Style="{x:Null}" MaxHeight="300">
+                <StackPanel MinWidth="150" Margin="10">
+                    <TextBlock FontSize="20" HorizontalAlignment="Center" Margin="20">Target(s)</TextBlock>
+
+                    <ListView Style="{x:Null}" MaxHeight="280" MaxWidth="150" x:Name="Structures"></ListView>
+                </StackPanel>
+                <StackPanel Style="{x:Null}" MinWidth="120" HorizontalAlignment="Left" MaxWidth="300" Margin="10">
+                    <StackPanel.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Header="Refresh Setups" Name="RefreshSetups" Click="RefreshSetups_Click" ></MenuItem>
+                        </ContextMenu>
+                    </StackPanel.ContextMenu>
+                    <TextBlock FontSize="20" HorizontalAlignment="Center" Margin="20">Setup</TextBlock>
+
+                    <ListView Style="{x:Null}" x:Name="Setups">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Style="{x:Null}" Text="{Binding Id}"/>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackPanel>
+            </DockPanel>
+            <DockPanel>
+                <StackPanel>
+                    <StackPanel Margin="20">
+                        <DockPanel Style="{x:Null}" x:Name="NonRDS">
+                        <StackPanel >
+                            <TextBlock FontSize="15" Margin="0,0,30,0">BreastCL Id</TextBlock>
+                            <TextBlock FontSize="15" Margin="0,2,30,0">Block Entry on CL Breast</TextBlock>
+                                <TextBlock FontSize="15" Margin="0,0,30,0">X less than 15 cm</TextBlock>
+                                <TextBlock FontSize="15" Margin="0,0,30,0">Add Nodes</TextBlock>
+
+
+                            </StackPanel>
+                        <StackPanel>
+                                <ComboBox Style="{x:Null}" IsEnabled="False" x:Name="BreastCLSelection" MinWidth="80" VerticalAlignment="Center">
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Id}"/>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+                                <CheckBox Style="{x:Null}" Click="CLBlock_MouseLeftButtonDown"  x:Name="CLBlock" Margin="0,5,0,0" VerticalAlignment="Center"></CheckBox>
+
+                                <CheckBox Style="{x:Null}" x:Name="PREVENT15" Margin="0,5,0,0" VerticalAlignment="Center"></CheckBox>
+                                <CheckBox Style="{x:Null}" x:Name="ADDNODES" Margin="0,5,0,0" VerticalAlignment="Center"></CheckBox>
+
+
+
+                            </StackPanel>
+                        </DockPanel>
+
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel>
+                    <Button Style="{x:Null}" Name="Apply" Click="Apply_Click" Margin="20" HorizontalAlignment="Right" FontSize="20" MinWidth="150" MaxWidth="250">Apply</Button>
+
+                </StackPanel>
+            </DockPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

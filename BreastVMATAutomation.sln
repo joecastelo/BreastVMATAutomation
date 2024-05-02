@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32126.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BreastVMATAutomation", "BreastVMATAutomation.csproj", "{FC9381BD-8F11-403D-8A94-EFD899F5E1EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC9381BD-8F11-403D-8A94-EFD899F5E1EA}.Debug|x64.ActiveCfg = Debug|x64
+		{FC9381BD-8F11-403D-8A94-EFD899F5E1EA}.Debug|x64.Build.0 = Debug|x64
+		{FC9381BD-8F11-403D-8A94-EFD899F5E1EA}.Release|x64.ActiveCfg = Release|x64
+		{FC9381BD-8F11-403D-8A94-EFD899F5E1EA}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {307930E5-3C88-4CFF-9C18-5FF05F80E5D2}
+	EndGlobalSection
+EndGlobal
