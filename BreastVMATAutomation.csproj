@@ -90,9 +90,11 @@
   <ItemGroup>
     <Compile Include="BreastVMATAutomation.cs" />
     <Compile Include="Model\ESAPI\BeamParameterCalculations.cs" />
+    <Compile Include="Model\ESAPI\BreastGeometryTool.cs" />
+    <Compile Include="Model\ESAPI\Interfaces\IBreastGeometryTool.cs" />
     <Compile Include="Model\ESAPI\NonRDSOptions.cs" />
+    <Compile Include="Model\ESAPI\SpecificBreastTools\RightBreastGeometryTool.cs" />
     <Compile Include="Model\Templating\ArcModel.cs" />
-    <Compile Include="Model\ESAPI\ArcGeometry.cs" />
     <Compile Include="Model\ESAPI\CalculationModels.cs" />
     <Compile Include="Model\ESAPI\SelectIsocenter.cs" />
     <Compile Include="Model\LINACSpecs.cs" />
@@ -107,7 +109,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Script.cs" />
-    <Compile Include="Model\ESAPI\BreastGeometryTool.cs" />
+    <Compile Include="Model\ESAPI\SpecificBreastTools\LeftBreastGeometryTool.cs" />
     <Compile Include="UI\ConfigContexts\CalculationModelUI.xaml.cs">
       <DependentUpon>CalculationModelUI.xaml</DependentUpon>
     </Compile>

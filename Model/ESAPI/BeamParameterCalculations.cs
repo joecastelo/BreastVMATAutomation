@@ -47,5 +47,11 @@ namespace BreastVMATAutomation.Model.ESAPI
             var jawpos = beam.ControlPoints.First().JawPositions;
             return points.Where(e => e.X > jawpos.X1).Count();
         }
+
+        public static int PointsInsideJawRight(List<Point> points, Beam beam)
+        {
+            var jawpos = beam.ControlPoints.First().JawPositions;
+            return points.Where(e => e.X < jawpos.X2).Count();
+        }
     }
 }

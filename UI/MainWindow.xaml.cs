@@ -102,11 +102,18 @@ namespace BreastVMATAutomation.UI
 
 
         }
+        public static bool IsLeftBreast(Structure sumPTV, Structure body)
+        {
+            return sumPTV.CenterPoint.x > body.CenterPoint.x;
+
+        }
         private void Apply_Click(object sender, RoutedEventArgs e)
         {
             var linacDefaultCalculation = new LINACDefaultCalculation();
             var esapiWorker = new BreastGeometryTool(_plan, Structures.SelectedItems.Cast<Structure>(),
-                (ArcModel) Setups.SelectedItem, linacDefaultCalculation, new NonRDSOptions(PREVENT15.IsChecked.Value, ADDNODES.IsChecked.Value, CLBlock.IsChecked.Value, (Structure) BreastCLSelection.SelectedItem));
+                (ArcModel) Setups.SelectedItem, 
+                new NonRDSOptions(PREVENT15.IsChecked.Value, ADDNODES.IsChecked.Value, CLBlock.IsChecked.Value, 
+                (Structure) BreastCLSelection.SelectedItem));
             esapiWorker.ChangeIsocenter();
             esapiWorker.CreateArcsBasedOnModel();
         }

@@ -11,13 +11,14 @@ namespace BreastVMATAutomation.Model.ESAPI
 {
     public class SelectIsocenter
     {
-        public static VVector IsocenterSelectionBreast(Structure target)
+        public static VVector IsocenterSelectionBreast(Structure target, bool left)
         {
-            return new VVector(target.CenterPoint.x - 25, target.CenterPoint.y +30 , target.CenterPoint.z);
+            var addX = left ? 1 : -1;
+            return new VVector(target.CenterPoint.x - 20*addX, target.CenterPoint.y +20 , target.CenterPoint.z);
         }
-        public static VVector ChangeIsocenter(ExternalPlanSetup planSetup, Structure target)
+        public static VVector ChangeIsocenter(ExternalPlanSetup planSetup, Structure target, bool left)
         {
-            var newIso = IsocenterSelectionBreast(target);
+            var newIso = IsocenterSelectionBreast(target, left);
             foreach (var beam in planSetup.Beams)
             {
                var beamParameters =  beam.GetEditableParameters();

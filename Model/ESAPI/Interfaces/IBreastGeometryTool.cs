@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace BreastVMATAutomation.Model.ESAPI
 {
-    class ArcGeometry
+    public interface IBreastGeometryTool
     {
+        void ChangeIsocenter();
+        void CreateArcsBasedOnModel();
+
+        void RemoveCreatedStructures();
     }
 }

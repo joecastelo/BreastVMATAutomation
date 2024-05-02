@@ -7,7 +7,7 @@ using VMS.TPS.Common.Model.API;
 
 namespace BreastVMATAutomation.Model.ESAPI
 {
-    class NonRDSOptions
+    public class NonRDSOptions
     {
         public NonRDSOptions(bool xLessThan15, bool includeNodes,  bool avoidEntryCLBreast, Structure breastContralateral)
         {
@@ -21,6 +21,8 @@ namespace BreastVMATAutomation.Model.ESAPI
         public bool IncludeNodes { get; set; }
         public Structure BreastContralateral { get; set; }
         public bool AvoidEntryCLBreast { get; set; }
+
+
 
     }
 }
